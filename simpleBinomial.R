@@ -1,3 +1,4 @@
+library(BRugs)
 modelString = "
 model {
    for (i in 1:nFlips) {

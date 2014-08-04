@@ -1,0 +1,11 @@
+
+model
+{
+   mu ~ dbeta(1,1)I(0.2,0.45)
+   r ~ dbin(mu, N)
+   mu2 ~ dbeta(1,1)I(0.2,0.45)
+   r2 ~ dbin(mu2, N2)
+   ratio <- mu2/mu
+   diff <- mu2 - mu
+}
+
