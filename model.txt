@@ -1,11 +1,14 @@
 
-model
-{
-   mu ~ dbeta(1,1)I(0.2,0.45)
-   r ~ dbin(mu, N)
-   mu2 ~ dbeta(1,1)I(0.2,0.45)
-   r2 ~ dbin(mu2, N2)
-   ratio <- mu2/mu
-   diff <- mu2 - mu
+# BUGS model specification begins ...
+model {
+    # Likelihood:
+    for ( i in 1:nFlips ) {
+        y[i] ~ dbern( theta )
+    }
+    # Prior distribution:
+    theta ~ dbeta( priorA , priorB )
+    priorA <- 1
+    priorB <- 1
 }
+# ... BUGS model specification ends.
 
