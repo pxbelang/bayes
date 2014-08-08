@@ -66,7 +66,7 @@ plot( thetaSample[1:5000] , 1:length(thetaSample[1:5000]) , type="o" ,
       cex.lab=1.25 , main="BUGS Results" )
 source("plotPost.R")
 histInfo = plotPost( thetaSample , xlim=c(0,1) )
-dev.copy2eps(file="BernBetaBugsFull.eps")
+#dev.copy2eps(file="BernBetaBugsFull.eps")
 
 # Posterior prediction:
 # For each step in the chain, use posterior theta to flip a coin:
@@ -91,4 +91,4 @@ text( mean(thetaSample) , mean(yPred) , srt=90 ,
       bquote( mean(theta) == .(signif(mean(thetaSample),2)) ) ,
       adj=c(1.2,.5) )
 abline( 0 , 1 , lty="dashed" , lwd=2 )
-dev.copy2eps(file="BernBetaBugsPost.eps")
+#dev.copy2eps(file="BernBetaBugsPost.eps")
