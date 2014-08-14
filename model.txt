@@ -1,12 +1,7 @@
 
-# BUGS model specification begins here...
 model {
-    # Likelihood. Each flip is Bernoulli. 
-    for ( i in 1 : N1 ) { y1[i] ~ dbern( theta1 ) }
-    for ( i in 1 : N2 ) { y2[i] ~ dbern( theta2 ) }
-    # Prior. Independent beta distributions.
-    theta1 ~ dbeta( 3 , 3 )
-    theta2 ~ dbeta( 3 , 3 )
+p ~ dbeta(a,b)
+x ~ dbin(p,n)
+
 }
-# ... end BUGS model specification
 
